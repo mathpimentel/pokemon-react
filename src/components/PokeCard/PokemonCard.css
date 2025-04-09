@@ -1,0 +1,60 @@
+.pokemon-card {
+  display: grid;
+  justify-self: center;
+  background: linear-gradient(to bottom right, #d92525, #a20d0d);
+  border-radius: 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  border: 4px solid #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.03);
+}
+
+/* Luz da Pokédex */
+.pokemon-card::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 24px;
+  height: 24px;
+  background-color: #4ef037;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px #4ef037;
+}
+
+/* Botões decorativos */
+.button-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.poke-button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #222;
+  background-color: #eee;
+}
+
+.poke-button:nth-child(1) {
+  background-color: #3fa7ff;
+}
+.poke-button:nth-child(2) {
+  background-color: #ffe748;
+}
+.poke-button:nth-child(3) {
+  background-color: #ff4040;
+}
