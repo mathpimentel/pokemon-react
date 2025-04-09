@@ -1,0 +1,29 @@
+.poke-types {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.type-container {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 4px 8px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.type-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+}
+
+.type-name {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #333;
+}
