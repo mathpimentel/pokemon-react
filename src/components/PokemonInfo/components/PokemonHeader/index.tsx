@@ -1,11 +1,15 @@
 import './styles.css'
 
+interface PokemonHeaderProps{
+  id: number,
+  name: string
+}
 
-const PokemonHeader = () => {
+const PokemonHeader = ({id,name} : PokemonHeaderProps) => {
   return (
     <header>
-        <span>N° {String(2).padStart(4, '0')}</span>
-        <h2>Ivysaur</h2>
+        <span>N° {String(id).padStart(4, "0")}</span>
+        <h2>{name}</h2>
       </header>
   )
 }

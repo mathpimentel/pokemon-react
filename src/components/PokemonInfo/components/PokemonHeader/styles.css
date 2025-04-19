@@ -12,6 +12,7 @@
 }
 
 .pokemon-info header h2 {
+  text-transform: capitalize;
   font-weight: 400;
   padding: 1rem 0;
   margin-left: 0.25rem;
