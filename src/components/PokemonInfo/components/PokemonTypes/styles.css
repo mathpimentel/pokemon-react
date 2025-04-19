@@ -1,0 +1,19 @@
+.types {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.types span img {
+  max-width: 100%;
+  width: 24px;
+  object-fit: contain;
+}
+
+.types span {
+  display: flex;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  gap: 0.5rem;
+  background-color: #d9d9d9;
+}
