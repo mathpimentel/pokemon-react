@@ -1,0 +1,29 @@
+.pokemon-info header {
+  background-color: #1e1e1e;
+  color: #fff;
+  display: flex;
+  border: 1px solid black;
+}
+
+.pokemon-info header h2,
+.pokemon-info header span {
+  display: block;
+  margin: 0;
+}
+
+.pokemon-info header h2 {
+  font-weight: 400;
+  padding: 1rem 0;
+  margin-left: 0.25rem;
+}
+
+.pokemon-info header span {
+  font-weight: 600;
+  font-size: 1.25rem;
+  align-self: center;
+  background-color: #28394b;
+
+  padding: 1rem 1rem;
+  width: 80px;
+  clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
