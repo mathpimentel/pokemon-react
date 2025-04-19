@@ -26,26 +26,25 @@ table td {
   border: 1px solid black;
 }
 
-.pokemon-attributes {
+table {
   margin-top: 1.25rem;
 }
-
-.pokemon-attributes tr {
+table tr {
   height: 4rem;
 }
 
-.pokemon-attributes th {
+table th {
   font-weight: 600;
   background-color: #dadada;
   text-align: center;
   width: 5rem;
   transition: 0.4s;
 }
-.pokemon-attributes th:hover {
+table th:hover {
   background-color: #cacaca;
 }
 
-.pokemon-attributes td {
+table td {
   vertical-align: middle;
   background-color: #fff;
   padding: 1rem;

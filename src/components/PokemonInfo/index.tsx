@@ -1,28 +1,26 @@
 import "./styles.css";
-import PokemonHeader from "./components/PokemonHeader";
-import PokemonTypes from "./components/PokemonTypes";
-import PokemonSize from "./components/PokemonSize"
-import PokemonAbilities from "./components/PokemonAbilities";
+
+import {
+  PokemonHeader,
+  PokemonTypes,
+  PokemonSize,
+  PokemonAbilities,
+} from "./components";
 
 const index = () => {
   return (
     <>
+    <section className="pokemon-info">
+
       <PokemonHeader />
-
-      <table className="pokemon-attributes">
+      <table>
         <tbody>
-          <tr>
-            <th>Tipo</th>
-            <td>
-              <PokemonTypes />
-
-            </td>
-          </tr>
-          
+          <PokemonTypes />
           <PokemonSize />
           <PokemonAbilities />
         </tbody>
       </table>
+    </section>
     </>
   );
 };
