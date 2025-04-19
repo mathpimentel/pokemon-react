@@ -12,7 +12,17 @@ const PokemonAbilities = () => {
         <td colSpan={2}>
           <ul>
             {abilities.map((ability) => (
-              <li>{ability}</li>
+              
+                <a
+                  href={`https://pokemondb.net/ability/${ability}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <li key={ability}>
+                  {ability}
+
+                  </li>
+                </a>
             ))}
           </ul>
         </td>
