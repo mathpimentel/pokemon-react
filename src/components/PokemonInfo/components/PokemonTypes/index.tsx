@@ -1,20 +1,44 @@
+import { PokemonType } from "../../../../types/pokemon";
 import "./styles.css";
 
-const types = [
-  { url: "../../src/assets/icons/types/grass.png", name: "Grama" },
-  { url: "../../src/assets/icons/types/poison.png", name: "Venenoso" },
-];
+const typeTranslation: Record<string, string> = {
+  normal: "Normal",
+  fire: "Fogo",
+  water: "Água",
+  electric: "Elétrico",
+  grass: "Grama",
+  ice: "Gelo",
+  fighting: "Lutador",
+  poison: "Venenoso",
+  ground: "Terra",
+  flying: "Voador",
+  psychic: "Psíquico",
+  bug: "Inseto",
+  rock: "Pedra",
+  ghost: "Fantasma",
+  dragon: "Dragão",
+  dark: "Sombrio",
+  steel: "Aço",
+  fairy: "Fada",
+};
 
-const PokemonTypes = () => {
+interface PokemonTypesProps {
+  types: PokemonType[];
+}
+
+const PokemonTypes = ({ types }: PokemonTypesProps) => {
   return (
     <tr>
       <th>Tipo</th>
       <td>
-        <div className="types">
-          {types.map((type) => (
+        <div className={`types ${types.length === 1 ? "single-type" : ""}`}>
+          {types.map(({ type }) => (
             <span key={type.name}>
-              <img src={type.url} alt={type.name} />
-              <p>{type.name}</p>
+              <img
+                src={`../../src/assets/icons/types/${type.name}.png`}
+                alt={type.name}
+              />
+              <p>{typeTranslation[type.name]}</p>
             </span>
           ))}
         </div>

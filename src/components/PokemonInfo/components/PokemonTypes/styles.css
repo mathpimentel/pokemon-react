@@ -4,6 +4,10 @@
   gap: 0.5rem;
 }
 
+.single-type {
+  justify-content: flex-start;
+}
+
 .types span img {
   max-width: 100%;
   width: 24px;
@@ -16,4 +20,9 @@
   border-radius: 0.5rem;
   gap: 0.5rem;
   background-color: #d9d9d9;
+}
+
+.types span p {
+  display: block;
+  align-content: center;
 }
