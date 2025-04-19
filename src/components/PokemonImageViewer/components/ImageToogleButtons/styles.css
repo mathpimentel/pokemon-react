@@ -1,0 +1,25 @@
+.button-image-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: absolute;
+  border: 2px solid;
+  top: 2rem;
+  left: 5.5rem;
+}
+
+.button-image-group button {
+  background-color: #1f2937;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.button-image-group button:hover {
+  background-color: #496787;
+}
