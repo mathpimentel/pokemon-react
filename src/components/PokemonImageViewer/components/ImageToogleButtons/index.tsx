@@ -1,10 +1,25 @@
 import "./styles.css";
 
-const index = () => {
+interface ToggleProps {
+  onToggle: (isShiny: boolean) => void;
+  showShiny: boolean;
+}
+
+const index = ({ onToggle, showShiny }: ToggleProps) => {
   return (
     <div className="button-image-group">
-      <button>Normal</button>
-      <button>Brilhante</button>
+      <button
+        className={!showShiny ? "active" : ""}
+        onClick={() => onToggle(false)}
+      >
+        Normal
+      </button>
+      <button
+        className={showShiny ? "active" : ""}
+        onClick={() => onToggle(true)}
+      >
+        Brilhante
+      </button>
     </div>
   );
 };

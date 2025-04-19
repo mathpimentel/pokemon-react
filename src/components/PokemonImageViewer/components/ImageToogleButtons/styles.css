@@ -23,3 +23,13 @@
 .button-image-group button:hover {
   background-color: #496787;
 }
+
+.button-image-group button.active {
+  background-color: #30A14E; /* amarelo brilhante, por exemplo */
+
+}
+
+.button-image-group button.active:hover {
+  background-color: #30A14E; /* amarelo brilhante, por exemplo */
+  
+}
