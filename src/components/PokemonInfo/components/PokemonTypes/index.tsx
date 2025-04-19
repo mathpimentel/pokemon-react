@@ -33,13 +33,19 @@ const PokemonTypes = ({ types }: PokemonTypesProps) => {
       <td>
         <div className={`types ${types.length === 1 ? "single-type" : ""}`}>
           {types.map(({ type }) => (
-            <span key={type.name}>
-              <img
-                src={`../../src/assets/icons/types/${type.name}.png`}
-                alt={type.name}
-              />
-              <p>{typeTranslation[type.name]}</p>
-            </span>
+            <a
+              href={`https://pokemondb.net/type/${type.name}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span key={type.name}>
+                <img
+                  src={`../../src/assets/icons/types/${type.name}.png`}
+                  alt={type.name}
+                />
+                <p>{typeTranslation[type.name]}</p>
+              </span>
+            </a>
           ))}
         </div>
       </td>
