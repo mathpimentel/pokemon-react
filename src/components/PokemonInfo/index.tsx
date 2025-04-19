@@ -1,4 +1,5 @@
 import "./styles.css";
+import {PokemonType, PokemonAbility} from "../../../src/types/pokemon.tsx"
 
 import {
   PokemonHeader,
@@ -7,20 +8,28 @@ import {
   PokemonAbilities,
 } from "./components";
 
-const index = () => {
+interface PokemonInfoProps {
+  id: number
+  name: string
+  height: number
+  weight: number
+  types: PokemonType[]
+  abilities: PokemonAbility[]
+}
+
+const index = ({id, name, height, weight, types, abilities} : PokemonInfoProps ) => {
   return (
     <>
-    <section className="pokemon-info">
-
-      <PokemonHeader />
-      <table>
-        <tbody>
-          <PokemonTypes />
-          <PokemonSize />
-          <PokemonAbilities />
-        </tbody>
-      </table>
-    </section>
+      <section className="pokemon-info">
+        <PokemonHeader id={id} name={name}/>
+        <table>
+          <tbody>
+            <PokemonTypes types={types} />
+            <PokemonSize height={height} weight={weight}/>
+            <PokemonAbilities abilities={abilities} />
+          </tbody>
+        </table>
+      </section>
     </>
   );
 };
