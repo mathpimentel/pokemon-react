@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { Pokemon } from "../../types/pokemon";
-import { SearchBar, PokeCard, Loading} from "../../components";
+import {
+  SearchBar,
+  Loading,
+  PokemonInfo,
+  PokemonImageViewer,
+} from "../../components";
+import "./styles.css";
 
 export default function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -37,14 +43,65 @@ export default function Home() {
         onInputChange={handleInputChange}
         onSearch={handlePesquisar}
       />
+
+      <main className="pokedex-container">
+        <PokemonImageViewer />
+        <PokemonInfo />
+
+        <section className="pokemon-status">
+          <div className="button-graph-group">
+            <button>Radar</button>
+            <button>Barra</button>
+          </div>
+          <span>Componente do gráfico</span>
+        </section>
+      </main>
+
       {pokemon ? (
-        <PokeCard pokemon={pokemon} />
-      ) : search ? (
-        <Loading />
+        <ul>
+          <li>Numero pokedex: {pokemon.id}</li>
+          <li>Nome: {pokemon.name}</li>
+          <li>Altura: {pokemon.height / 10}</li>
+          <li>Peso: {pokemon.weight / 10} </li>
+          <li>
+            Tipo:
+            {pokemon.types?.map((type) => (
+              <span>{type.type.name}</span>
+            ))}
+          </li>
+
+          <li>
+            Status:
+            {pokemon.stats?.map((stat) => (
+              <li>
+                Nome:{stat.stat.name}, Status:{stat.base_stat},{" "}
+              </li>
+            ))}
+          </li>
+          <li>
+            {pokemon.abilities?.map((ability, index) => (
+              <li>
+                Habilidade {index + 1}:{ability.ability.name}
+              </li>
+            ))}
+          </li>
+
+          <li>
+            Imagem:{" "}
+            <img
+              src={pokemon.sprites.other["official-artwork"].front_default}
+              alt={pokemon.name}
+            />
+            Shiny:{" "}
+            <img
+              src={pokemon.sprites.other["official-artwork"].front_shiny}
+              alt={pokemon.name}
+            />
+          </li>
+        </ul>
       ) : (
-        <div>Pesquise um Pokémon acima!</div>
+        <Loading />
       )}
-      {/* src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon?.id}.png`} */}
     </>
   );
 }
