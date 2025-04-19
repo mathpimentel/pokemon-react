@@ -1,28 +1,30 @@
+import { PokemonAbility } from "../../../../types/pokemon";
 import "./styles.css";
 
-const abilities = ["overgrow", "chlorophyll"];
+interface PokemonAbilitiesProps {
+  abilities: PokemonAbility[];
+}
 
-const PokemonAbilities = () => {
+const PokemonAbilities = ({ abilities }: PokemonAbilitiesProps) => {
   return (
     <>
       <tr>
-        <th colSpan={2}>Habilidade</th>
+        <th colSpan={2}>Habilidades</th>
       </tr>
       <tr className="pokemon-abilities">
         <td colSpan={2}>
           <ul>
-            {abilities.map((ability) => (
-              
-                <a
-                  href={`https://pokemondb.net/ability/${ability}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <li key={ability}>
-                  {ability}
-
-                  </li>
-                </a>
+            {abilities.map(({ ability, is_hidden }) => (
+              <a
+                href={`https://pokemondb.net/ability/${ability.name}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <li className={is_hidden ? "hidden-ability" : ""}>
+                  {ability.name}
+                  {is_hidden && <span className="hidden-indicator">*</span>}
+                </li>
+              </a>
             ))}
           </ul>
         </td>

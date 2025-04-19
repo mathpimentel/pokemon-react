@@ -2,6 +2,8 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
 }
 
 .pokemon-abilities li {
@@ -13,16 +15,79 @@
   border-radius: 0.5rem;
   border: 1px solid #28394b;
   transition: 0.4s;
-  cursor: pointer;
-}
-
-.pokemon-abilities a{
-  text-decoration: none;
-  color: #28394B;
-  font-weight: 500;
+  position: relative;
 }
 
 .pokemon-abilities li:hover {
   background-color: #979797;
   color: white;
+}
+
+.pokemon-abilities a {
+  text-decoration: none;
+  color: #28394b;
+  font-weight: 500;
+}
+
+.pokemon-abilities .hidden-ability {
+  position: relative;
+  background-color: #496787;
+  color: white;
+}
+
+.pokemon-abilities .hidden-ability:hover {
+  background-color: #28394b;
+}
+
+.hidden-ability {
+  position: relative;
+  color: #5b008c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Tooltip */
+.hidden-ability::after {
+  content: "Habilidade oculta";
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #222;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hidden-ability::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #222 transparent;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Show tooltip on hover */
+.hidden-ability:hover::after,
+.hidden-ability:hover::before {
+  opacity: 1;
+}
+
+/* Estilo opcional para o asterisco */
+.hidden-indicator {
+  margin-left: 0.3rem;
+  font-size: 1.1rem;
+  vertical-align: middle;
 }
