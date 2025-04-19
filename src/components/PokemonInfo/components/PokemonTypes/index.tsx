@@ -7,15 +7,19 @@ const types = [
 
 const PokemonTypes = () => {
   return (
-    <div className="types">
-      {types.map((type) => (
-        <span key={type.name}>
-          <img src={type.url} alt={type.name} />
-          <p>{type.name}</p>
-        </span>
-      ))}
-    </div>
+    <tr>
+      <th>Tipo</th>
+      <td>
+        <div className="types">
+          {types.map((type) => (
+            <span key={type.name}>
+              <img src={type.url} alt={type.name} />
+              <p>{type.name}</p>
+            </span>
+          ))}
+        </div>
+      </td>
+    </tr>
   );
 };
-
 export default PokemonTypes;
