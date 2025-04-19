@@ -8,6 +8,7 @@ export type PokemonAbility = {
   ability: {
     name: string;
   };
+  is_hidden: boolean
 };
 
 export type PokemonStat = {
